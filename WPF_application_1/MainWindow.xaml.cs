@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -165,12 +165,14 @@ namespace WPF_application_1
 
             _foodPosition = new Point(foodX, foodY);
 
+            string imagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", "Orange.png");
             Image foodImage = new Image
             {
                 Width = SnakeSquareSize,
                 Height = SnakeSquareSize,
-                Source = new BitmapImage(new Uri("C:\\Проекты VisualStudio\\C# VisualStudio\\WPFAppC#\\WPF_application_1\\WPF_application_1\\Images\\Orange.png"))
+                Source = new BitmapImage(new Uri(imagePath, UriKind.Absolute))
             };
+
 
             Canvas.SetLeft(foodImage, foodX * SnakeSquareSize);
             Canvas.SetTop(foodImage, foodY * SnakeSquareSize);
